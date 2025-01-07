@@ -1,23 +1,53 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./components/Header/Header";
+import ProductList from './components/Products/ProductList';
+import {products,categories} from './helper/data';
+import React, { useState } from "react";
+
+
+
 
 function App() {
+  const [filteredProducts, setFilteredProducts] = useState(products);
+  const [ArananKelime, setArananKelime] = useState("")
+
+  const kategori =[]
+
+  products.forEach((e)=>{
+    if(!kategori.includes(e.category)){
+      kategori.push(e.category)
+    }
+  })
+
+  
+//  item burada tiklananan buton olacak.
+  const kategoriSec = (item) => {
+  const filtered = products.filter((product) => product.category === item);
+  if(filtered.length===0){
+    setFilteredProducts(products);
+  }
+  else{
+    setFilteredProducts(filtered);
+  }
+  };
+
+
+  const arama =(aranan)=>{
+    const arananKucuk = aranan.toLowerCase()
+    const filterelenmis = products.filter((item)=>item.title.toLowerCase().includes(arananKucuk))
+
+    setFilteredProducts(filterelenmis);
+  }
+
+
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header categories={categories} kategoriBtn={kategoriSec} SearchBtn={arama}/>
+
+      <ProductList products={filteredProducts}/>
     </div>
   );
 }
