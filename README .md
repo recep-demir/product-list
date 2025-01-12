@@ -1,7 +1,7 @@
 ## **Live Demo**
 Check out the live version of the Product List App here: [Live Demo](https://myproduct-list.netlify.app/)
 
-![Home Page Screenshot](./public/assets/image.png)
+![Home Page Screenshot](./public/assets/video.mp4)
 
 # Product List
 
