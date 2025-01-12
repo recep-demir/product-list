@@ -1,55 +1,56 @@
-import './App.css';
-import Header from "./components/Header/Header";
-import ProductList from './components/Products/ProductList';
+import React, { useState } from 'react'
+import "./App.scss";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/Header/Header'
 import {products,categories} from './helper/data';
-import React, { useState } from "react";
+import ProductList from './components/Products/ProductList';
+
+const App = () => {
+    const [FilteredProducts, setFilteredProducts] = useState(products)
+    // const [sortKey, setSortKey] = useState(products)
 
 
-
-
-function App() {
-  const [filteredProducts, setFilteredProducts] = useState(products);
-  const [ArananKelime, setArananKelime] = useState("")
-
-  const kategori =[]
-
-  products.forEach((e)=>{
-    if(!kategori.includes(e.category)){
-      kategori.push(e.category)
-    }
-  })
-
-  
-//  item burada tiklananan buton olacak.
-  const kategoriSec = (item) => {
-  const filtered = products.filter((product) => product.category === item);
-  if(filtered.length===0){
-    setFilteredProducts(products);
+const kategori =[]
+products.forEach((e)=>{
+  if(!kategori.includes(e.category)){
+    kategori.push(e.category)
   }
-  else{
-    setFilteredProducts(filtered);
-  }
+})
+
+const categorySelect = (item)=>{
+    const filtered = products.filter((e)=>e.category===item)
+      if(filtered.length===0){
+        setFilteredProducts(products);
+      }
+      else{
+        setFilteredProducts(filtered);
+      }
+}
+
+const ProductSearch = (wanted)=>{
+    const filteredSearch = products.filter((item)=>item.title.toLowerCase().includes(wanted.toLowerCase()))
+    setFilteredProducts(filteredSearch)
+}
+
+const sortedProducts = (sortKey) => {
+    const sorted = [...FilteredProducts].sort((a, b) => {
+      if (sortKey === "price") {
+        return a.price - b.price;
+      } else if (sortKey === "name") {
+        return a.title.localeCompare(b.title);
+      }
+      return 0;
+    });
+    setFilteredProducts(sorted);
   };
 
 
-  const arama =(aranan)=>{
-    const arananKucuk = aranan.toLowerCase()
-    const filterelenmis = products.filter((item)=>item.title.toLowerCase().includes(arananKucuk))
-
-    setFilteredProducts(filterelenmis);
-  }
-
-
-
-
-
   return (
-    <div className="App">
-      <Header categories={categories} kategoriBtn={kategoriSec} SearchBtn={arama}/>
-
-      <ProductList products={filteredProducts}/>
+    <div>
+        <Header categories={categories} categoryButton={categorySelect} SearchInput={ProductSearch} sortedProducts={sortedProducts} />
+        <ProductList products={FilteredProducts}  />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,0 +1,53 @@
+@import '../../scss/variables';
+.card{
+    border: 9px solid grey;
+    width: 375px;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+
+}
+.price{
+            
+    background-color: grey;
+    padding: $cardPadding;
+    font-size: 0.9rem;
+    text-align: center;
+
+}
+.card-img-top{
+    width: 100%;
+        height: $cardHeight;
+        border-radius: $borderRadius;
+        filter: opacity(0.7);
+}
+.card-img-top:hover{
+    filter: none;
+}
+.card-body{
+    
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+    bottom: 0;
+    background-color: grey;
+    color: white;
+    font-size: 0.8rem;
+    align-items: center;
+    padding: $cardPadding;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    transform: translateY(100%);
+    transition: all 1s;
+    height: 25%;
+    overflow: auto;
+           
+
+}
+.card-body::-webkit-scrollbar{
+    display: none;
+}
+
+.card:hover .card-body{
+    transform: translateY(0%);
+}

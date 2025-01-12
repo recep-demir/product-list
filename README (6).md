@@ -1,6 +1,31 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Product List
+
+This project is a React application that allows users to filter products by category, sort them by price or name, and search for products using a search bar. The application is responsive and user-friendly.
+
+
+## Features
+
+- Category Filtering: Filter products based on categories.
+- Product Search: Search for products by their title.
+- Sorting: Sort products by price or name.
+- Responsive Design: Built with Bootstrap for a mobile-friendly layout.
+
+
+## Tech Stack
+
+**React**: For building the application structure.
+
+**SASS**: For styling and managing CSS more efficiently.
+
+**Bootstrap**: For responsive UI components.
+
+**JavaScript**: For dynamic functionalities.
+
+
+## Installation
+
+Install my-project with npm
 
 ## Available Scripts
 
@@ -39,32 +64,46 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+    
+## Project Structure
 
-### Code Splitting
+src
+├── components
+│   ├── Header
+│   │   ├── Header.js
+│   │   └── Header.scss
+│   ├── Products
+│   │   ├── ProductCard.js
+│   │   ├── ProductList.js
+│   │   └── Products.scss
+├── helper
+│   └── data.js
+├── App.js
+├── App.scss
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## How to Use
 
-### Analyzing the Bundle Size
+1. Filter Products by Category
+Click on any category button on the main page to filter products.
+2. Search Products
+Type a product name in the search bar to display matching results.
+3. Sort Products
+Use the dropdown menu to sort products by "Name" or "Price."
+## Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🚀 About Me
+I'm a Recep Demir
+https://github.com/recep-demir
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Future Enhancements
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Add a shopping cart feature.
+- Implement more advanced filtering options.
+- Integrate with a backend for dynamic data.

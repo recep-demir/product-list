@@ -1,0 +1,18 @@
+.header h1{
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+}
+.header .btn{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    // background-color: grey;
+
+}
+
+.form-select{
+    width: 130px;
+}
