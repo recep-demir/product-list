@@ -67,7 +67,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
     
 ## Project Structure
-
+`
 src
 ├── components
 │   ├── Header
@@ -81,7 +81,7 @@ src
 │   └── data.js
 ├── App.js
 ├── App.scss
-
+`
 ## How to Use
 
 1. Filter Products by Category
