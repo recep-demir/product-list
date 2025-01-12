@@ -1,3 +1,4 @@
+![Home Page Screenshot](./public/assets/image.png)
 
 # Product List
 
