@@ -92,7 +92,7 @@ Type a product name in the search bar to display matching results.
 Use the dropdown menu to sort products by "Name" or "Price."
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](./public/assets/image.png)
 
 
 ## 🚀 About Me
