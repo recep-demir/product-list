@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header/Header'
 import {products,categories} from './helper/data';
 import ProductList from './components/Products/ProductList';
-
 const App = () => {
     const [FilteredProducts, setFilteredProducts] = useState(products)
     // const [sortKey, setSortKey] = useState(products)
